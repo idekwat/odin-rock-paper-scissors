@@ -1,6 +1,9 @@
 
 console.log("Hello Wold")
 
+let computerScore = 0;
+let humanScore = 0;
+
 function getComputerChoice(computerRPS) {
 
     let randomResult = Math.floor(Math.random() * 3);
@@ -26,3 +29,6 @@ function getHumanChoice(humanRPS) {
 }
 
 console.log(getHumanChoice(""))
+
+console.log(computerScore);
+console.log(humanScore);
