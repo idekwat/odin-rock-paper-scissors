@@ -4,10 +4,16 @@ console.log("Hello Wold")
 let computerScore = 0;
 let humanScore = 0;
 
-
 function playGame() {
-    playRound();
-}
+    let ctr = 5;
+    while(ctr > 0) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();        
+        playRound(humanSelection, computerSelection);
+        ctr--;;
+        }
+    }
+playGame();
 
 function playRound(humanChoice, computerChoice) {
 
@@ -20,7 +26,7 @@ function playRound(humanChoice, computerChoice) {
     else {
         switch(humanChoice) {
             case("Rock"):
-            if(computerChoice = "Scissors") {
+            if(computerChoice == "Scissors") {
                 console.log(humanChoice + " beats " + computerChoice + ". Player wins!")
                 humanScore++;
             }
@@ -30,7 +36,7 @@ function playRound(humanChoice, computerChoice) {
             }
             break;
             case("Paper"):
-            if(computerChoice = "Rock") {
+            if(computerChoice == "Rock") {
                 console.log(humanChoice + " beats " + computerChoice + ". Player wins!")
                 humanScore++;
             }
@@ -40,7 +46,7 @@ function playRound(humanChoice, computerChoice) {
             }
             break;
             case("Scissors"):
-            if(computerChoice = "Paper") {
+            if(computerChoice == "Paper") {
                 console.log(humanChoice + " beats " + computerChoice + ". Player wins!")
                 humanScore++;
             }
@@ -54,10 +60,6 @@ function playRound(humanChoice, computerChoice) {
     console.log("Player score: " + humanScore);
     console.log("Computer score: " + computerScore);
 }
-
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection)
 
 
 function getComputerChoice(computerRPS) {
