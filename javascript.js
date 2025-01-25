@@ -1,9 +1,9 @@
 
-console.log("Hello Wold")
 
 let computerScore = 0;
 let humanScore = 0;
 
+/*
 function playGame() {
     let ctr = 5;
     while(ctr > 0) {
@@ -13,7 +13,38 @@ function playGame() {
         ctr--;;
         }
     }
-playGame();
+playGame();  */
+/*
+const playRock  = document.getElementById("rock");
+const playPaper = document.getElementById("paper");
+const playScissors = document.getElementById("scissors"); */
+
+
+const playRock = document.getElementById("rock");
+const playPaper = document.getElementById("paper");
+const playScissors = document.getElementById("scissors");
+
+
+playRock.onclick = (event) => {
+    playRound(playRock.value,getComputerChoice());
+}
+playPaper.onclick = (event) => {
+    playRound(playPaper.value, getComputerChoice());
+}
+playScissors.onclick = (event) => {
+    playRound(playScissors.value, getComputerChoice());
+}
+
+
+/*
+let playGame = document.querySelector("button");
+
+playGame.onclick = (event) => {
+    const playerInput = playGame.value;
+    console.log(playerInput);
+    playRound(playerInput, getComputerChoice());
+
+}*/
 
 function playRound(humanChoice, computerChoice) {
 
@@ -79,7 +110,7 @@ function getComputerChoice(computerRPS) {
     return computerRPS;
 }
 
-function getHumanChoice(humanRPS) {
+/*function getHumanChoice(humanRPS) {
     humanRPS = prompt("Rock, Paper, Scissors").toLowerCase();
     let capitalize = humanRPS.charAt(0).toUpperCase();
     let humanOutput = capitalize+humanRPS.slice(1);
@@ -90,4 +121,4 @@ function getHumanChoice(humanRPS) {
     }
     else
     console.log("Wrong Input!") 
-}
+}*/
