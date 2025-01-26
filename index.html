@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .buttonsHere {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            margin: auto;
+            padding: auto;
+        }
+        button {
+            margin: auto;
+            padding: auto;
+            padding: 8px;
+            font-size: 20px;
+            background-color: aqua;
+            border-radius: 10px;
+            width: 140px;
+        }
+    </style>
 </head>
 <body>
-    <button id="rock" value="Rock">Rock</button>
-    <button id="paper" value="Paper">Paper</button>
-    <button id="scissors" value="Scissors">Scissors</button>
+    <div class ="buttonsHere">
+        <button id="rock" value="Rock">Rock</button>
+        <button id="paper" value="Paper">Paper</button>
+        <button id="scissors" value="Scissors">Scissors</button>
+    </div>
     <script src="javascript.js"></script>
 </body>
 </html>
