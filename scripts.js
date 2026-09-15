@@ -38,6 +38,12 @@ function playGame() {
     while(rounds < 5) {
         playRound(getHumanChoice(), getComputerChoice());
     }
+    if(rounds = 5) {
+        console.log(`After ${rounds} rounds.`)
+        if(humanScore > computerScore) console.log(`With a score of ${humanScore} - ${computerScore}. You win!`);
+        else if(humanScore == computerScore) console.log(`With a score of ${humanScore} - ${computerScore}. It's a tie!`);
+        else console.log(`With a score of ${humanScore} - ${computerScore}. You lose!`);
+    }
 }
 
 playGame();
