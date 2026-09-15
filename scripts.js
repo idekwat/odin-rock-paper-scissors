@@ -1,9 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
-const humanChoice = getHumanChoice;
-const computerChoice = getComputerChoice;
-
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3);
     let computerChoice = "";
@@ -15,29 +9,35 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     const humanChoice = prompt("Rock, Paper, Scissors");
-    return humanChoice;
-}
-
-function playRound(humanChoice, computerChoice) {
-    let humanChoiceFormat = humanChoice(0).toUpperCase + humanChoice.slice(1).toLowerCase();
-    if(humanChoiceFormat == "Rock" && computerChoice == "Paper" ||
-        humanChoiceFormat == "Paper" && computerChoice == "Scissors" ||
-        humanChoiceFormat == "Scissors" && computerChoice == "Rock") {
-        console.log(`You lose! ${computerChoice} beats ${humanChoiceFormat}`);
-        computerScore++;
-    }else if(humanChoiceFormat == computerChoice) {
-        console.log(`It's a tie! You have both chosen ${humanChoiceFormat}`);
-    }
-    else {
-        console.log(`You win! ${humanChoiceFormat} beats ${computerChoice}`)
-        humanScore++;
-    }
+    let formatChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase();
+    return formatChoice;
 }
 
 function playGame() {
-    playRound(getHumanChoice, getComputerChoice);
-    playRound(getHumanChoice, getComputerChoice);
-    playRound(getHumanChoice, getComputerChoice);
-    playRound(getHumanChoice, getComputerChoice);
-    playRound(getHumanChoice, getComputerChoice);
+    let humanScore = 0;
+    let computerScore = 0;
+    let rounds = 0;
+
+    function playRound(human, computer) {
+        if(human == "Rock" && computer == "Paper" ||
+            human == "Paper" && computer == "Scissors" ||
+            human == "Scissors" && computer == "Rock") {
+            console.log(`You lose! ${computer} beats ${human}`);  
+            computerScore++;
+            rounds++;
+        }else if(human == computer) {
+            console.log(`It's a tie! You have both chosen ${computer}`);
+            rounds++;
+        }
+        else {
+            console.log(`You win! ${human} beats ${computer}`)
+            humanScore++;
+            rounds++;
+        }
+    }
+    while(rounds < 5) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
 }
+
+playGame();
