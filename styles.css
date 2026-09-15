@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: green;
+}
+
+.container, .score-container, .button-container, .scoreboard {
+    display: flex;
+}
+
+.container {
+    flex-direction: column;
+}
+
+.score-container {
+    height: 50vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+.scoreboard {
+    width: 80vw;
+    height: 80%;
+    background-color: darkgreen;
+    font-size: 64px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    height: 50vh;
+    width: 100vw;
+    justify-content: space-evenly;
+    padding: 10px;
+    gap: 2vw;
+}
+
+.choice-button {
+    font-size: 36px;
+    height: 30vh;
+    width: 180px;
+}
