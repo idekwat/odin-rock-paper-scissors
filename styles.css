@@ -28,7 +28,7 @@ body {
     height: 80%;
     background-color: darkgreen;
     font-size: 64px;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
